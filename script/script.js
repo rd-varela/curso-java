@@ -12,6 +12,8 @@ else{
 let nombre = document.getElementsByName("nombre")
 let ocupacion = document.getElementsByName("ocupacion")
 
+const datos = []
+
 function formularioEnviar(){
     event.preventDefault();
 
@@ -19,5 +21,37 @@ function formularioEnviar(){
 
     ocupacion = document.getElementsByName("ocupacion")[0].value;
 
-    alert('Tu nombre es '+ nombre +' y tu ocupacion es ' + ocupacion)
+    const dato = {nombre, ocupacion}
+
+    datos.push(dato)
+    
+    let datosLista = "Introducido hasta ahora:\n";
+
+    for (let i = 0; i < datos.length; i++) {
+    datosLista += "  - Nombre: " + datos[i].nombre + ", Ocupacion: " + datos[i].ocupacion + "\n";
+    }
+    alert(datosLista);
+
+    console.log(datos)
+}
+
+function formularioRevisar(){
+    event.preventDefault();
+
+    let rubro = prompt('Indique su rubro (comerciante, gastronomico, metalurgico')
+
+    switch(rubro) {
+        case 'comerciante':
+            alert('Hay 19 vacantes disponibles para el rubro');
+            break;
+        case 'gastronomico':
+            alert('Hay 3 vacantes disponibles para el rubro');
+            break;
+        case 'metalurgico':
+            alert('Hay 1 vacante disponible para el rubro');
+            break;
+        default:
+            alert('Opcion no valida. Por favor seleccionar: comerciante, gastronomico o metalurgico')
+            break;
+    }
 }

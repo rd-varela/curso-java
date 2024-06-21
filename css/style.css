@@ -58,5 +58,8 @@ body {
 #contenidoHome form input {
   font-size: 18px;
 }
+#contenidoHome h2 {
+  margin-top: 40px;
+}
 
 /*# sourceMappingURL=style.css.map */
